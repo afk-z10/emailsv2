@@ -61,3 +61,18 @@ export function If({ name, condition, children }) {
 
   return condition ? children : null;
 }
+
+export function RawIf({ name, condition, children }) {
+  const isPreview = useIsPreview();
+  if (!isPreview) {
+    return (
+      <>
+        <mj-raw>{`{{#if ${name}}}`}</mj-raw>
+        {children}
+        <mj-raw>{`{{/if}}`}</mj-raw>
+      </>
+    );
+  }
+
+  return condition ? children : null;
+}
