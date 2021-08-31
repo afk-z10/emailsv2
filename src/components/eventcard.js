@@ -41,22 +41,16 @@ function EventCard() {
               width="24px"
               style="padding:0px 2px 0px 0px;vertical-align:middle;"
             />
-          </td>
-          <td>
             <span
               style={`font-size:16px;font-weight:600;color:${orange[1]};vertical-align:middle;line-height:24px`}
             >
               {useData("time", eventData.timeText)}
             </span>
-          </td>
-          <td>
             <img
               src={logos.duration}
               width="16px"
               style="padding:0px 4px 0px 12px;vertical-align:middle;"
             />
-          </td>
-          <td>
             <span
               style={`font-size:12px;color:${grey[3]};vertical-align:middle;`}
             >
