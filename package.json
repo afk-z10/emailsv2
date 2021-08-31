@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "aviyel-emails-v2",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-inject": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-run": "^2.1.0",
+    "@rollup/plugin-sucrase": "^4.0.0",
+    "mjml": "^4.10.2",
+    "mjml-jsx": "^0.0.1",
+    "rollup": "^2.56.3",
+    "rollup-plugin-node-externals": "^2.2.0",
+    "vhtml": "^2.2.0"
+  }
+}

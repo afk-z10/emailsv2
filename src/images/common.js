@@ -1,0 +1,7 @@
+const logos = {
+  aviyel: "https://beta.aviyel.com/assets/uploads/static/aviyel-newlogo.png",
+  duration:
+    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC43OCAyLjYxQTUuNDUgNS40NSAwIDExNC4zIDMuOTlsLTEuMS0xLjFhNyA3IDAgMTA0LjAxLTEuODV2NC43aDEuNTZWMi42eiIgZmlsbD0iIzZENkQ3QyIvPjxwYXRoIGQ9Ik00LjY2IDUuNDRhLjc4Ljc4IDAgMDAwIDEuMWwyLjIgMi4yYS43OC43OCAwIDAwMS4xLTEuMWwtMi4yLTIuMmEuNzguNzggMCAwMC0xLjEgMHoiIGZpbGw9IiM2RDZEN0MiLz48L3N2Zz4=",
+};
+
+export { logos };
