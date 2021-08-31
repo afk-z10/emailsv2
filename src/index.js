@@ -41,6 +41,7 @@ async function devServer() {
     }
 
     const Page = route.page;
+    writeFile(pathJoin(OUT_DIR, `${route.path}.mjml`), htmlBeautify(<Page />));
     res.end(htmlBeautify(mjml2html(<Page />).html));
   });
 

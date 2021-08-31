@@ -9,7 +9,7 @@ function ViewEventLink() {
       background-color={purple.primary}
       border-radius="4px"
       padding="0px"
-      href={useData("link", eventData.link)}
+      href={useData("event_link", eventData.link)}
       align="left"
     >
       View Event

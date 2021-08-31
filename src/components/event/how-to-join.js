@@ -16,7 +16,7 @@ function HowToJoin() {
       <mj-text font-size="16px" font-weight="600" color={purple.darkest}>
         Visit the event detail page and click on{" "}
         <a
-          href={useData("link", eventData.link)}
+          href={useData("event_link", eventData.link)}
           target="_blank"
           style={`color:${purple.darkest}`}
         >

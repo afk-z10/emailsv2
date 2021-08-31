@@ -2,6 +2,7 @@ import { grey, orange } from "../common/colors";
 import { eventData } from "../dummyData/event";
 import { logos } from "../images/common";
 import { useData } from "../utils";
+import { EventType } from "./event/event-type";
 
 function EventCard() {
   return (
@@ -12,6 +13,9 @@ function EventCard() {
       border-radius="4px"
     >
       <mj-table>
+        <tr>
+          <EventType />
+        </tr>
         <tr>
           <td
             valign="baseline"
@@ -31,17 +35,28 @@ function EventCard() {
       </mj-table>
       <mj-table table-layout="auto">
         <tr>
-          <td valign="baseline">
+          <td>
+            <img
+              src={logos.calendarOrange}
+              width="24px"
+              style="padding:0px 2px 0px 0px;vertical-align:middle;"
+            />
+          </td>
+          <td>
             <span
-              style={`font-size:16px;font-weight:600;color:${orange[1]};vertical-align:middle;`}
+              style={`font-size:16px;font-weight:600;color:${orange[1]};vertical-align:middle;line-height:24px`}
             >
               {useData("time", eventData.timeText)}
             </span>
+          </td>
+          <td>
             <img
               src={logos.duration}
               width="16px"
               style="padding:0px 4px 0px 12px;vertical-align:middle;"
             />
+          </td>
+          <td>
             <span
               style={`font-size:12px;color:${grey[3]};vertical-align:middle;`}
             >
