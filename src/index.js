@@ -11,6 +11,9 @@ import { EventInviteSpeaker } from "./pages/invite-speaker";
 import { SpeakerReminder } from "./pages/speaker-reminder";
 
 const OUT_DIR = pathJoin(".", "out");
+function createListing() {
+  return routes.map(({ path }) => `<a href="${path}">${path}</a>`).join("\n");
+}
 async function build() {
   await rmdir(OUT_DIR, { recursive: true });
 
@@ -24,6 +27,8 @@ async function build() {
       htmlBeautify(mjml2html(<Page />).html)
     );
   });
+
+  await writeFile(pathJoin(OUT_DIR, "index.html"), createListing());
 }
 
 async function devServer() {
@@ -31,9 +36,7 @@ async function devServer() {
   server.on("request", (req, res) => {
     const route = routes.find(({ path }) => path === req.url);
     if (!route) {
-      res.end(
-        routes.map(({ path }) => `<a href="${path}">${path}</a>`).join("\n")
-      );
+      res.end(createListing());
       return;
     }
 
