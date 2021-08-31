@@ -46,3 +46,18 @@ export function With({ name, children }) {
   }
   return children;
 }
+
+export function If({ name, condition, children }) {
+  const isPreview = useIsPreview();
+  if (!isPreview) {
+    return (
+      <>
+        {`{{#if ${name}}}`}
+        {children}
+        {`{{/if}}`}
+      </>
+    );
+  }
+
+  return condition ? children : null;
+}

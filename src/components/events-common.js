@@ -1,6 +1,6 @@
 import { grey, purple } from "../common/colors";
 import { eventData, userData } from "../dummyData/event";
-import { Loop, useData } from "../utils";
+import { If, Loop, useData } from "../utils";
 import { SectionTitle } from "./common";
 
 function ViewEventLink() {
@@ -64,16 +64,18 @@ function SpeakersList() {
           <Speaker speaker={userData} />
         </Loop>
       </mj-table>
-      <SectionTitle>Organizers</SectionTitle>
-      <mj-table css-class="speakers">
-        <Loop
-          data={[userData]}
-          name="organizers"
-          render={(d) => <Speaker speaker={d} />}
-        >
-          <Speaker speaker={userData} />
-        </Loop>
-      </mj-table>
+      <If name="organizers.length" condition={true}>
+        <SectionTitle>Organizers</SectionTitle>
+        <mj-table css-class="speakers">
+          <Loop
+            data={[userData]}
+            name="organizers"
+            render={(d) => <Speaker speaker={d} />}
+          >
+            <Speaker speaker={userData} />
+          </Loop>
+        </mj-table>
+      </If>
     </mj-column>
   );
 }
