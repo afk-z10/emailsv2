@@ -22,6 +22,7 @@ const green = {
   0: "#05A660",
 };
 const red = {
+  0: "#f42f42",
   1: "#FF3B3B",
 };
 const orange = {

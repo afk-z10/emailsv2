@@ -4,6 +4,7 @@ const { html: htmlBeautify } = require("js-beautify");
 
 import { writeFile, mkdir, rmdir } from "fs/promises";
 import { join as pathJoin } from "path";
+import { EventCancelled } from "./pages/event-cancelled";
 import { EventRegistered } from "./pages/event-register";
 import { EventReminder } from "./pages/event-reminder";
 import { EventUpdated } from "./pages/event-updated";
@@ -76,6 +77,10 @@ const routes = [
   {
     path: "/speaker-reminder",
     page: SpeakerReminder,
+  },
+  {
+    path: "/event-cancelled",
+    page: EventCancelled,
   },
 ];
 

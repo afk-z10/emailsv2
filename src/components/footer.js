@@ -18,7 +18,11 @@ function Footer() {
         <mj-text font-size="12px" color={grey[3]} align="center">
           This e-mail has been sent to{" "}
           {useData("receiver_email", "mathew@aviyel.com")},{" "}
-          <a href="" target="_blank" style={`color:${grey[3]}`}>
+          <a
+            href="{{{unsubscribe}}}"
+            target="_blank"
+            style={`color:${grey[3]}`}
+          >
             click here
           </a>{" "}
           to unsubscribe.
