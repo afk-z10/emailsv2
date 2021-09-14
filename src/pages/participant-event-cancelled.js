@@ -7,7 +7,7 @@ import { grey, red, white } from "../common/colors";
 import { font } from "../common/styles";
 import { GetInTouch, HeaderLogo } from "../components/common";
 
-function EventCancelled() {
+function EventCancelledParticipant() {
   return (
     <mjml>
       <mj-head>
@@ -32,12 +32,7 @@ function EventCancelled() {
                   </span>
                   <br />
                   <br />
-                  We are sorry to let you know that{" "}
-                  <span style="font-weight: 600">
-                    Dilip has cancelled the event
-                  </span>{" "}
-                  you have planned/organize to speak. You have successfully
-                  registered for the event
+                  Oh no, your scheduled event is cancelled.
                 </p>
               </mj-text>
               <mj-spacer height="28px" />
@@ -61,4 +56,4 @@ function EventCancelled() {
   );
 }
 
-export { EventCancelled };
+export { EventCancelledParticipant };

@@ -9,6 +9,7 @@ import { useData } from "../utils";
 import { font } from "../common/styles";
 import { grey, white } from "../common/colors";
 import { GetInTouch, HeaderLogo } from "../components/common";
+import { WhatIsAviyel } from "../components/what-is-aviyel";
 
 const eventData = {
   username: "John Doe",
@@ -69,13 +70,16 @@ function EventInviteSpeaker() {
             <mj-column>
               <mj-spacer height="20px" />
               <ViewEventLink />
-              <mj-divider
+              {/* <mj-divider
                 padding="20px 0px 0px 0px"
                 border-width="1px"
                 border-color={grey[6]}
               />
-              <mj-spacer height="20px" />
+              <mj-spacer height="20px" /> */}
             </mj-column>
+          </mj-section>
+          <mj-section>
+            <WhatIsAviyel />
           </mj-section>
           <mj-section padding="0px 30px">
             <GetInTouch />

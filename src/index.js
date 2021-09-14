@@ -4,16 +4,22 @@ const { html: htmlBeautify } = require("js-beautify");
 
 import { writeFile, mkdir, rmdir } from "fs/promises";
 import { join as pathJoin } from "path";
-import { EventCancelled } from "./pages/event-cancelled";
-import { EventRegistered } from "./pages/event-register";
-import { EventReminder } from "./pages/event-reminder";
-import { EventUpdated } from "./pages/event-updated";
-import { EventInviteSpeaker } from "./pages/invite-speaker";
+import { EventCancelledParticipant } from "./pages/participant-event-cancelled";
+import { EventRegistered } from "./pages/participant-event-register";
+import { EventReminder } from "./pages/participant-event-reminder";
+import { EventUpdated } from "./pages/participant-event-updated";
+import { EventAddSpeaker } from "./pages/speaker-add";
+import { EventAddSpeakerUpdate } from "./pages/speaker-add-update";
+import { EventCancelledSpeaker } from "./pages/speaker-cancel";
+import { EventInviteSpeaker } from "./pages/speaker-invite";
+import { EventInviteSpeakerUpdate } from "./pages/speaker-invite-update";
 import { SpeakerReminder } from "./pages/speaker-reminder";
 
 const OUT_DIR = pathJoin(".", "out");
 function createListing() {
-  return routes.map(({ path }) => `<a href="${path}">${path}</a>`).join("\n");
+  return routes
+    .map(({ path }) => `<div><a href="${path}">${path}</a></div>`)
+    .join("\n");
 }
 async function build() {
   await rmdir(OUT_DIR, { recursive: true });
@@ -62,25 +68,35 @@ function start() {
 
 const routes = [
   {
-    path: "/event-register",
+    path: "/participant-event-register",
     page: EventRegistered,
   },
   {
-    path: "/event-reminder",
+    path: "/participant-event-reminder",
     page: EventReminder,
   },
-  { path: "/event-updated", page: EventUpdated },
+  { path: "/participant-event-updated", page: EventUpdated },
   {
-    path: "/invite-speaker",
+    path: "/speaker-invite",
     page: EventInviteSpeaker,
   },
+  { path: "/speaker-invite-update", page: EventInviteSpeakerUpdate },
+  {
+    path: "/speaker-add",
+    page: EventAddSpeaker,
+  },
+  { path: "/speaker-add-update", page: EventAddSpeakerUpdate },
   {
     path: "/speaker-reminder",
     page: SpeakerReminder,
   },
   {
-    path: "/event-cancelled",
-    page: EventCancelled,
+    path: "/participant-event-cancelled",
+    page: EventCancelledParticipant,
+  },
+  {
+    path: "/speaker-event-cancelled",
+    page: EventCancelledSpeaker,
   },
 ];
 
