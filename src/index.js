@@ -8,6 +8,7 @@ import { EventCancelledParticipant } from "./pages/participant-event-cancelled";
 import { EventRegistered } from "./pages/participant-event-register";
 import { EventReminder } from "./pages/participant-event-reminder";
 import { EventUpdated } from "./pages/participant-event-updated";
+import { ProjectSubmitted } from "./pages/project-submitted";
 import { EventAddSpeaker } from "./pages/speaker-add";
 import { EventAddSpeakerUpdate } from "./pages/speaker-add-update";
 import { EventCancelledSpeaker } from "./pages/speaker-cancel";
@@ -97,6 +98,10 @@ const routes = [
   {
     path: "/speaker-event-cancelled",
     page: EventCancelledSpeaker,
+  },
+  {
+    path: "/project-submitted",
+    page: ProjectSubmitted,
   },
 ];
 
