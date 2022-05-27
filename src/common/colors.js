@@ -14,6 +14,7 @@ const purple = {
   darkest: "#59347f",
   darker: "#7f58bd",
   primary: "#8661D1",
+  main: "#8661D1",
   subtle: "#F5F1FD",
   light: "#cfc0ed",
 };
@@ -34,6 +35,7 @@ const white = "#ffffff";
 const colors = {
   grey,
   purple,
+  primary: purple,
   green,
   red,
   orange,
