@@ -9,6 +9,7 @@ import { EventRegistered } from "./pages/participant-event-register";
 import { EventReminder } from "./pages/participant-event-reminder";
 import { EventUpdated } from "./pages/participant-event-updated";
 import { ProjectSubmitted } from "./pages/project-submitted";
+import { ProjectInviteAdmin } from "./pages/project-invite-admin";
 import { EventAddSpeaker } from "./pages/speaker-add";
 import { EventAddSpeakerUpdate } from "./pages/speaker-add-update";
 import { EventCancelledSpeaker } from "./pages/speaker-cancel";
@@ -102,6 +103,10 @@ const routes = [
   {
     path: "/project-submitted",
     page: ProjectSubmitted,
+  },
+  {
+    path: "/project-invite-admin",
+    page: ProjectInviteAdmin,
   },
 ];
 
