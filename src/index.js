@@ -2,7 +2,7 @@ const mjml2html = require("mjml");
 const http = require("http");
 const { html: htmlBeautify } = require("js-beautify");
 
-import { writeFile, mkdir, rmdir } from "fs/promises";
+import { writeFile, mkdir, rm } from "fs/promises";
 import { join as pathJoin } from "path";
 import { EventCancelledParticipant } from "./pages/participant-event-cancelled";
 import { EventRegistered } from "./pages/participant-event-register";
@@ -16,6 +16,8 @@ import { EventCancelledSpeaker } from "./pages/speaker-cancel";
 import { EventInviteSpeaker } from "./pages/speaker-invite";
 import { EventInviteSpeakerUpdate } from "./pages/speaker-invite-update";
 import { SpeakerReminder } from "./pages/speaker-reminder";
+import { RewardsBadgeUnlocked } from "./pages/rewards-unlocked-badges";
+import { RewardsNFTMinted } from "./pages/rewards-nft-minted";
 
 const OUT_DIR = pathJoin(".", "out");
 function createListing() {
@@ -24,7 +26,7 @@ function createListing() {
     .join("\n");
 }
 async function build() {
-  await rmdir(OUT_DIR, { recursive: true });
+  await rm(OUT_DIR, { recursive: true });
 
   try {
     await mkdir(OUT_DIR, {});
@@ -107,6 +109,14 @@ const routes = [
   {
     path: "/project-invite-admin",
     page: ProjectInviteAdmin,
+  },
+  {
+    path: "/reward-badge-unlocked",
+    page: RewardsBadgeUnlocked,
+  },
+  {
+    path: "/reward-nft-minted",
+    page: RewardsNFTMinted,
   },
 ];
 

@@ -31,6 +31,9 @@ const orange = {
 };
 
 const white = "#ffffff";
+const yellow = {
+  3: "#FFF6E0",
+};
 
 const colors = {
   grey,
@@ -39,6 +42,7 @@ const colors = {
   green,
   red,
   orange,
+  yellow,
   white,
 };
 
