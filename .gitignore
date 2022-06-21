@@ -1,3 +1,6 @@
 node_modules
 out
 dist
+
+# misc
+.DS_Store
