@@ -18,6 +18,7 @@ import { EventInviteSpeakerUpdate } from "./pages/speaker-invite-update";
 import { SpeakerReminder } from "./pages/speaker-reminder";
 import { RewardsBadgeUnlocked } from "./pages/rewards-unlocked-badges";
 import { RewardsNFTMinted } from "./pages/rewards-nft-minted";
+import { CohortsExportCSV } from "./pages/cohorts-export-csv";
 
 const OUT_DIR = pathJoin(".", "out");
 function createListing() {
@@ -117,6 +118,10 @@ const routes = [
   {
     path: "/reward-nft-minted",
     page: RewardsNFTMinted,
+  },
+  {
+    path: "/cohort-export-csv",
+    page: CohortsExportCSV,
   },
 ];
 
