@@ -1,20 +1,24 @@
 {
   "private": true,
   "name": "aviyel-emails-v2",
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c"
+    "start": "vite dev",
+    "build": "vite build",
+    "postbuild": "node dist/index.js"
+  },
+  "dependencies": {
+    "mjml": "^4.10.2",
+    "vhtml": "^2.2.0"
   },
   "devDependencies": {
-    "@rollup/plugin-inject": "^4.0.2",
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@rollup/plugin-run": "^2.1.0",
-    "@rollup/plugin-sucrase": "^4.0.0",
-    "mjml": "^4.10.2",
+    "@types/js-beautify": "^1.13.3",
+    "@types/mjml": "^4.7.0",
+    "@types/node": "^16.18.3",
+    "@types/vhtml": "^2.2.4",
     "mjml-jsx": "^0.0.1",
-    "rollup": "^2.56.3",
-    "rollup-plugin-node-externals": "^2.2.0",
-    "vhtml": "^2.2.0"
+    "vite": "^3.2.2",
+    "vite-plugin-node": "^1.0.0"
   }
 }

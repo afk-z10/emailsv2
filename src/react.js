@@ -1,4 +1,4 @@
-const h = require("vhtml");
+import h from "vhtml";
 
 const Fragment = ({ children }) => h(null, null, ...children);
 
