@@ -170,4 +170,4 @@ function RewardsNFTMinted() {
   );
 }
 
-export { RewardsNFTMinted };
+export default RewardsNFTMinted;

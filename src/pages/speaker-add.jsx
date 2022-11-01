@@ -90,4 +90,4 @@ function EventAddSpeaker() {
   );
 }
 
-export { EventAddSpeaker };
+export default EventAddSpeaker;

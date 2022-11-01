@@ -73,4 +73,4 @@ function CohortsExportCSV() {
   );
 }
 
-export { CohortsExportCSV };
+export default CohortsExportCSV;

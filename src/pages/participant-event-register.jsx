@@ -88,4 +88,4 @@ function EventRegistered() {
   );
 }
 
-export { EventRegistered };
+export default EventRegistered;

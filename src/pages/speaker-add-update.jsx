@@ -86,4 +86,4 @@ function EventAddSpeakerUpdate() {
   );
 }
 
-export { EventAddSpeakerUpdate };
+export default EventAddSpeakerUpdate;

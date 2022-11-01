@@ -154,4 +154,4 @@ function RewardsBadgeUnlocked() {
   );
 }
 
-export { RewardsBadgeUnlocked };
+export default RewardsBadgeUnlocked;

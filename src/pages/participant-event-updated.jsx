@@ -79,4 +79,4 @@ function EventUpdated() {
   );
 }
 
-export { EventUpdated };
+export default EventUpdated;

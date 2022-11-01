@@ -74,4 +74,4 @@ function ProjectSubmitted() {
   );
 }
 
-export { ProjectSubmitted };
+export default ProjectSubmitted;

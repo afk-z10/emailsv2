@@ -74,4 +74,4 @@ function SpeakerReminder() {
   );
 }
 
-export { SpeakerReminder };
+export default SpeakerReminder;

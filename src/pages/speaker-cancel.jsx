@@ -61,4 +61,4 @@ function EventCancelledSpeaker() {
   );
 }
 
-export { EventCancelledSpeaker };
+export default EventCancelledSpeaker;

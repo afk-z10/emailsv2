@@ -93,4 +93,4 @@ function EventInviteSpeaker() {
   );
 }
 
-export { EventInviteSpeaker };
+export default EventInviteSpeaker;

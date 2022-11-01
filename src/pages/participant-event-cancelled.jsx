@@ -56,4 +56,4 @@ function EventCancelledParticipant() {
   );
 }
 
-export { EventCancelledParticipant };
+export default EventCancelledParticipant;

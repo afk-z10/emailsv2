@@ -103,4 +103,4 @@ function ProjectInviteAdmin() {
   );
 }
 
-export { ProjectInviteAdmin };
+export default ProjectInviteAdmin;

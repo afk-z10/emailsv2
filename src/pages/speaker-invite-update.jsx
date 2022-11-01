@@ -89,4 +89,4 @@ function EventInviteSpeakerUpdate() {
   );
 }
 
-export { EventInviteSpeakerUpdate };
+export default EventInviteSpeakerUpdate;

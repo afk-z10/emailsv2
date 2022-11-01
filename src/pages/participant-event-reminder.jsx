@@ -83,4 +83,4 @@ function EventReminder() {
   );
 }
 
-export { EventReminder };
+export default EventReminder;
