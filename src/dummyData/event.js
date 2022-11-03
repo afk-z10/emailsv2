@@ -3,8 +3,7 @@ const eventData = {
   title:
     "Webinar : AI & ML, Containers & Cloud Native Online Developer Summit Replays",
   link: "https://beta.aviyel.com/events/212/backstage_message_test",
-  eventLogo:
-    "https://beta.aviyel.com/assets/uploads/files/1629179524523-raccoon.jpeg",
+  eventLogo: "https://placeimg.com/64/64/tech",
   timeText: "17 April, 2021 - 2:30 PM",
   duration: "1 hr 45 min",
 };

@@ -1,8 +1,24 @@
 import { grey, orange } from "../common/colors";
 import { eventData } from "../dummyData/event";
 import { logos } from "../images/common";
-import { If, useData } from "../utils";
+import { If, Loop, useData } from "../utils";
 import { EventType } from "./event/event-type";
+
+function TaggedProject() {
+  return (
+    <mj-text font-size="14px" font-weight="500" color={grey[1]}>
+      <div style="display:flex">
+        <img
+          src={useData("image", "https://placeimg.com/24/24/tech")}
+          width="24px"
+          height="24px"
+          style="margin-right:8px;border-radius:4px;"
+        />
+        {useData("name", "Chatwoot")}
+      </div>
+    </mj-text>
+  );
+}
 
 function EventCard() {
   return (
@@ -18,7 +34,7 @@ function EventCard() {
         </tr>
         <tr>
           <td
-            valign="baseline"
+            valign="middle"
             style={`font-size:18px;font-weight:600;color:${grey[1]};padding-right:12px;`}
           >
             {useData("title", eventData.title)}
@@ -33,6 +49,15 @@ function EventCard() {
           </td>
         </tr>
       </mj-table>
+
+      <If name="projects" condition={true}>
+        <mj-spacer height="10px" />
+        <Loop name="projects" data={[null]} render={() => <TaggedProject />}>
+          <TaggedProject />
+        </Loop>
+        <mj-spacer height="10px" />
+      </If>
+
       <mj-table table-layout="auto">
         <tr>
           <td>
