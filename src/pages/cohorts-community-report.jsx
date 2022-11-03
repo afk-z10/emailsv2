@@ -130,12 +130,31 @@ function CohortsCommunityReport() {
           <mj-text padding="0" line-height="1.5" />
           <mj-all font-family={font} />
           <mj-table table-layout="auto" padding="0px" cellpadding="0px" />
+          <mj-image padding="0px" />
         </mj-attributes>
       </mj-head>
       <mj-body background-color="#F6F6F9">
         <mj-section padding="32px" background-color={colors.white}>
           <mj-section padding="8px 0px">
-            <mj-image src={logos.aviyel} height="24px" />
+            <mj-column>
+              <mj-image
+                align="left"
+                src={useData(
+                  "project_logo",
+                  "https://placeimg.com/24/100/tech"
+                )}
+                height="24px"
+                width="100px"
+              />
+            </mj-column>
+            <mj-column>
+              <mj-image
+                align="right"
+                src={logos.aviyel_small}
+                height="24px"
+                width="24px"
+              />
+            </mj-column>
           </mj-section>
           <mj-spacer height="16px" />
           <mj-text color={colors.grey[1]} font-size="22px">
