@@ -1,7 +1,7 @@
 import { grey, orange } from "../common/colors";
 import { eventData } from "../dummyData/event";
 import { logos } from "../images/common";
-import { useData } from "../utils";
+import { If, useData } from "../utils";
 import { EventType } from "./event/event-type";
 
 function EventCard() {
@@ -59,6 +59,12 @@ function EventCard() {
           </td>
         </tr>
       </mj-table>
+      <If name="event_summary" condition={true}>
+        <mj-spacer height="8px" />
+        <mj-text font-size="14px" color={grey[2]}>
+          {useData("event_summary", "Event Summary text here")}
+        </mj-text>
+      </If>
     </mj-column>
   );
 }
