@@ -94,6 +94,9 @@ function WorkflowRewardsUnlocked() {
             color={colors.white}
             padding="8px 20px"
             background-color={colors.primary.main}
+            href="https://aviyel.com/rewards/claim"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Claim your new badge
           </mj-button>
