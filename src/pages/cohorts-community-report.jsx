@@ -11,12 +11,15 @@ function IntegrationCard() {
         <mj-text font-size="16px" font-weight="600" color={colors.grey[1]}>
           <div style="display:flex">
             <img
-              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              src={useData(
+                "image",
+                "https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              )}
               height="24px"
               width="24px"
               style="margin-right:8px"
             />
-            45 Repositories
+            {useData("title", "45 Repositories")}
           </div>
         </mj-text>
 
@@ -24,7 +27,7 @@ function IntegrationCard() {
         <mj-section padding="0px">
           <mj-column>
             <mj-text font-size="18px" font-weight="600" color={colors.grey[2]}>
-              450
+              {useData("total_members", 200)}
             </mj-text>
             <mj-text font-size="14px" font-weight="500" color={colors.grey[2]}>
               Total Members
@@ -32,18 +35,18 @@ function IntegrationCard() {
           </mj-column>
           <mj-column>
             <mj-text font-size="18px" font-weight="600" color={colors.grey[2]}>
-              450
+              {useData("new_members", 10)}
             </mj-text>
             <mj-text font-size="14px" font-weight="500" color={colors.grey[2]}>
-              Total Members
+              New Members
             </mj-text>
           </mj-column>
           <mj-column>
             <mj-text font-size="18px" font-weight="600" color={colors.grey[2]}>
-              450
+              {useData("active_members", 23)}
             </mj-text>
             <mj-text font-size="14px" font-weight="500" color={colors.grey[2]}>
-              Total Members
+              Active Members
             </mj-text>
           </mj-column>
         </mj-section>
@@ -68,17 +71,20 @@ function CohortCard() {
     <>
       <mj-spacer height="16px" />
       <mj-text font-size="18px" color={colors.grey[0]} font-weight="600">
-        Cohort Name
+        {useData("name", "Cohort Name")}
       </mj-text>
       <mj-spacer height="4px" />
       <mj-text font-size="14px" color={colors.grey[3]}>
-        Cohort Description need to be copied from the cohorts design
+        {useData(
+          "description",
+          "Cohort Description need to be copied from the cohorts design"
+        )}
       </mj-text>
 
       <mj-spacer height="12px" />
       <mj-section padding="16px 20px" border={`1px solid ${colors.grey[6]}`}>
         <mj-text font-size="24px" font-weight="600" color={colors.grey[1]}>
-          45 Members
+          {useData("members", 45)} Members
         </mj-text>
 
         <mj-spacer height="16px" />
