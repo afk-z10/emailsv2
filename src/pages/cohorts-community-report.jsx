@@ -9,7 +9,7 @@ function IntegrationCard() {
       <mj-spacer height="12px" />
       <mj-section padding="16px 20px" border={`1px solid ${colors.grey[6]}`}>
         <mj-text font-size="16px" font-weight="600" color={colors.grey[1]}>
-          <div style="display:flex">
+          <div style="display:table;">
             <img
               src={useData(
                 "image",
@@ -17,9 +17,11 @@ function IntegrationCard() {
               )}
               height="24px"
               width="24px"
-              style="margin-right:8px"
+              style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
             />
-            {useData("title", "45 Repositories")}
+            <span style="display:table-cell;vertical-align:middle;">
+              {useData("title", "45 Repositories")}
+            </span>
           </div>
         </mj-text>
 
@@ -182,7 +184,19 @@ function CohortsCommunityReport() {
                 font-weight="600"
                 color={colors.grey[1]}
               >
-                {useData("total_members", 450)}
+                <div style="display:table;">
+                  <div style="display:table-cell;vertical-align:middle;">
+                    <img
+                      src="https://beta.aviyel.com/assets/uploads/static/email/community.png"
+                      height="24px"
+                      width="24px"
+                      style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
+                    />
+                  </div>
+                  <span style="display:table-cell;vertical-align:middle;">
+                    {useData("total_members", 450)}
+                  </span>
+                </div>
               </mj-text>
               <mj-text
                 font-size="16px"
@@ -198,7 +212,19 @@ function CohortsCommunityReport() {
                 font-weight="600"
                 color={colors.grey[1]}
               >
-                {useData("new_members", 450)}
+                <div style="display:table;">
+                  <div style="display:table-cell;vertical-align:middle;">
+                    <img
+                      src="https://beta.aviyel.com/assets/uploads/static/email/community-new.png"
+                      height="24px"
+                      width="24px"
+                      style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
+                    />
+                  </div>
+                  <span style="display:table-cell;vertical-align:middle;">
+                    {useData("new_members", 450)}
+                  </span>
+                </div>
               </mj-text>
               <mj-text
                 font-size="16px"
@@ -214,7 +240,19 @@ function CohortsCommunityReport() {
                 font-weight="600"
                 color={colors.grey[1]}
               >
-                {useData("active_members", 450)}
+                <div style="display:table;">
+                  <div style="display:table-cell;vertical-align:middle;">
+                    <img
+                      src="https://beta.aviyel.com/assets/uploads/static/email/community-active.png"
+                      height="24px"
+                      width="24px"
+                      style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
+                    />
+                  </div>
+                  <span style="display:table-cell;vertical-align:middle;">
+                    {useData("active_members", 450)}
+                  </span>
+                </div>
               </mj-text>
               <mj-text
                 font-size="16px"
