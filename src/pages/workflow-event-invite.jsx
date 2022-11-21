@@ -21,12 +21,9 @@ function WorkflowEventInvite() {
             <mj-column>
               <mj-image
                 align="left"
-                src={useData(
-                  "project_logo",
-                  "https://placeimg.com/24/100/tech"
-                )}
-                height="24px"
-                width="100px"
+                src={useData("project_logo", "https://placeimg.com/44/44/tech")}
+                height="44px"
+                width="44px"
               />
             </mj-column>
             <mj-column>

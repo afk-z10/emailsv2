@@ -57,6 +57,7 @@ function IntegrationCard() {
           background-color={colors.white}
           padding="0px"
           color={colors.primary.main}
+          target="_blank"
           href="https://beta.aviyel.com/projects/2069/cosmicvillage/community/summary"
         >
           View Activity
@@ -97,22 +98,26 @@ function CohortCard() {
           <tr
             style={`text-align:left;color:${colors.grey[2]};font-size:18px;font-weight:600;`}
           >
-            <td>20%</td>
-            <td>20%</td>
-            <td>20%</td>
-            <td>20%</td>
-            <td>20%</td>
+            <Loop
+              name="distribution"
+              data={[10, 20, 23, 44]}
+              render={(x) => <td>{x}%</td>}
+            >
+              <td>{useData("value")}%</td>
+            </Loop>
           </tr>
           <tr style={`text-align:left;color:${colors.grey[2]};font-size:14px;`}>
-            <td>Slack</td>
-            <td>Slack</td>
-            <td>Slack</td>
-            <td>Slack</td>
-            <td>Slack</td>
+            <Loop
+              name="distribution"
+              data={["Slack", "Aviyel", "Discord", "Github"]}
+              render={(x) => <td>{x}</td>}
+            >
+              <td>{useData("name")}%</td>
+            </Loop>
           </tr>
         </mj-table>
 
-        <mj-spacer height="24px" />
+        <mj-spacer height="12px" />
         <mj-button
           font-size="14px"
           font-weight="500"
@@ -145,12 +150,9 @@ function CohortsCommunityReport() {
             <mj-column>
               <mj-image
                 align="left"
-                src={useData(
-                  "project_logo",
-                  "https://placeimg.com/24/100/tech"
-                )}
-                height="24px"
-                width="100px"
+                src={useData("project_logo", "https://placeimg.com/44/44/tech")}
+                height="44px"
+                width="44px"
               />
             </mj-column>
             <mj-column>
@@ -168,7 +170,7 @@ function CohortsCommunityReport() {
           </mj-text>
           <mj-spacer height="4px" />
           <mj-text color={colors.grey[1]} font-size="18px" font-weight="600">
-            Jan 1 - Jan 7th, 2022
+            {useData("duration", "Jan 1 - Jan 7th, 2022")}
           </mj-text>
 
           {/* Summary */}
@@ -180,7 +182,7 @@ function CohortsCommunityReport() {
                 font-weight="600"
                 color={colors.grey[1]}
               >
-                450
+                {useData("total_members", 450)}
               </mj-text>
               <mj-text
                 font-size="16px"
@@ -196,7 +198,7 @@ function CohortsCommunityReport() {
                 font-weight="600"
                 color={colors.grey[1]}
               >
-                450
+                {useData("new_members", 450)}
               </mj-text>
               <mj-text
                 font-size="16px"
@@ -212,7 +214,7 @@ function CohortsCommunityReport() {
                 font-weight="600"
                 color={colors.grey[1]}
               >
-                450
+                {useData("active_members", 450)}
               </mj-text>
               <mj-text
                 font-size="16px"
