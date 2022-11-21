@@ -60,7 +60,10 @@ function IntegrationCard() {
           padding="0px"
           color={colors.primary.main}
           target="_blank"
-          href="https://beta.aviyel.com/projects/2069/cosmicvillage/community/summary"
+          href={useData(
+            "activity_url",
+            "https://beta.aviyel.com/projects/2069/cosmicvillage/community/summary"
+          )}
         >
           View Activity
         </mj-button>
