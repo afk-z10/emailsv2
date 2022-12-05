@@ -32,6 +32,22 @@ export function Loop({ name, data, children, render }) {
   return data.map(render);
 }
 
+export function For({ i, list, children }) {
+  const isPreview = useIsPreview();
+
+  if (!isPreview) {
+    return (
+      <>
+        {`{% for ${i} in ${list} %}`}
+        {children}
+        {`{% endfor %}`}
+      </>
+    );
+  }
+
+  return children;
+}
+
 export function With({ name, children }) {
   const isPreview = useIsPreview();
 

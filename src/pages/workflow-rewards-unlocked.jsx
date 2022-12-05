@@ -1,7 +1,7 @@
 import colors from "../common/colors";
 import { font } from "../common/styles";
 import { logos } from "../images/common";
-import { If, useData } from "../utils";
+import { For, If, useData } from "../utils";
 
 function WorkflowRewardsUnlocked() {
   return (
@@ -37,15 +37,23 @@ function WorkflowRewardsUnlocked() {
 
           <mj-spacer height="16px" />
           <mj-section padding="32px 40px" background-color={colors.grey[8]}>
-            <mj-column>
-              <mj-image
-                src={useData(
-                  "reward_image",
-                  "https://placeimg.com/340/100/tech"
-                )}
-                height="100px"
-              />
-            </mj-column>
+            <For i="i" list="rewards">
+              <mj-column
+                width="90px"
+                height="90px"
+                padding-left="2px"
+                padding-right="2px"
+              >
+                <mj-image
+                  src={useData(
+                    "i.reward_image",
+                    "https://placeimg.com/90/90/tech"
+                  )}
+                  height="90px"
+                  width="90px"
+                />
+              </mj-column>
+            </For>
           </mj-section>
 
           <mj-spacer height="16px" />
