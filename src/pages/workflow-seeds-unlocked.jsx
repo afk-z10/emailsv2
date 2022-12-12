@@ -1,7 +1,7 @@
 import colors from "../common/colors";
 import { font } from "../common/styles";
 import { logos } from "../images/common";
-import { For, If, useData } from "../utils";
+import { If, useData } from "../utils";
 
 function WorkflowRewardsUnlocked() {
   return (
@@ -34,37 +34,15 @@ function WorkflowRewardsUnlocked() {
               />
             </mj-column>
           </mj-section>
-
-          <mj-spacer height="16px" />
-          <mj-section padding="32px 40px" background-color={colors.grey[8]}>
-            <For i="i" list="rewards">
-              <mj-column
-                width="90px"
-                height="90px"
-                padding-left="2px"
-                padding-right="2px"
-              >
-                <mj-image
-                  src={useData(
-                    "i.reward_image",
-                    "https://placeimg.com/90/90/tech"
-                  )}
-                  height="90px"
-                  width="90px"
-                />
-              </mj-column>
-            </For>
-          </mj-section>
-
           <mj-spacer height="16px" />
           <mj-text font-size="18px" font-weight="600" color={colors.grey[1]}>
-            Congratulations {useData("username", "John Doe")}!
+            Hi {useData("username", "John Doe")}!
           </mj-text>
 
           <mj-spacer height="16px" />
           <mj-text font-size="16px" font-weight="600" color={colors.grey[1]}>
-            You have unlocked {useData("username", "Badge Name")} badge with{" "}
-            {useData("username", "250")} seeds!
+            You have earned {useData("seeds", "10")} seeds for your
+            contributions!
           </mj-text>
 
           <mj-spacer height="16px" />
@@ -75,7 +53,7 @@ function WorkflowRewardsUnlocked() {
             contributors. Keep at it!
             <br />
             <br />
-            You can go claim your new badge on{" "}
+            You can go claim your new seeds on{" "}
             <a
               href="https://aviyel.com/rewards/claim"
               target="_blank"
@@ -83,11 +61,8 @@ function WorkflowRewardsUnlocked() {
               style={`color:${colors.primary.main};`}
             >
               aviyel.com/rewards/claim
-            </a>{" "}
-            You can mint this badge as a Proof of Contribution NFT on Aviyel as
-            well!
+            </a>
           </mj-text>
-
           <mj-spacer height="16px" />
           <mj-button
             font-size="14px"
@@ -99,22 +74,20 @@ function WorkflowRewardsUnlocked() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Claim your new badge
+            Claim your seeds
           </mj-button>
-
           <mj-spacer height="16px" />
           <mj-text font-size="16px" color={colors.grey[2]}>
-            Don’t forget to add your badge to your github readme using{" "}
+            You can also update your github readme, using the{" "}
             <a
               href="https://aviyel.com/github-readme"
               target="_blank"
               rel="noopener noreferrer"
               style={`color:${colors.grey[2]};`}
             >
-              Aviyel’s readme generator!
+              readme generator on Aviyel
             </a>
           </mj-text>
-
           <mj-spacer height="28px" />
           <mj-text
             align="center"
@@ -124,7 +97,6 @@ function WorkflowRewardsUnlocked() {
           >
             Next Goal :
           </mj-text>
-
           <If name="next_level" condition={true}>
             <mj-spacer height="16px" />
             <mj-section padding="0px">
@@ -165,7 +137,6 @@ function WorkflowRewardsUnlocked() {
               </mj-column>
             </mj-section>
           </If>
-
           <mj-spacer height="28px" />
           <mj-text font-size="16px" color={colors.grey[2]}>
             Keep on contributing and keep on inspiring others!
