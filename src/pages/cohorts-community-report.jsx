@@ -1,6 +1,6 @@
 import colors from "../common/colors";
 import { font } from "../common/styles";
-import { logos } from "../images/common";
+import { CommunityHeader } from "../components/community/header";
 import { Loop, useData } from "../utils";
 
 function IntegrationCard() {
@@ -13,7 +13,7 @@ function IntegrationCard() {
             <img
               src={useData(
                 "image",
-                "https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                "https://beta.aviyel.com/assets/uploads/static/email/github.png?v1"
               )}
               height="24px"
               width="24px"
@@ -26,32 +26,23 @@ function IntegrationCard() {
         </mj-text>
 
         <mj-spacer height="16px" />
-        <mj-section padding="0px">
-          <mj-column>
-            <mj-text font-size="18px" font-weight="600" color={colors.grey[2]}>
-              {useData("total_members", 200)}
-            </mj-text>
-            <mj-text font-size="14px" font-weight="500" color={colors.grey[2]}>
-              Total Members
-            </mj-text>
-          </mj-column>
-          <mj-column>
-            <mj-text font-size="18px" font-weight="600" color={colors.grey[2]}>
-              {useData("new_members", 10)}
-            </mj-text>
-            <mj-text font-size="14px" font-weight="500" color={colors.grey[2]}>
-              New Members
-            </mj-text>
-          </mj-column>
-          <mj-column>
-            <mj-text font-size="18px" font-weight="600" color={colors.grey[2]}>
-              {useData("active_members", 23)}
-            </mj-text>
-            <mj-text font-size="14px" font-weight="500" color={colors.grey[2]}>
-              Active Members
-            </mj-text>
-          </mj-column>
-        </mj-section>
+        <mj-table padding="0px">
+          <tr
+            style={`text-align:left;color:${colors.grey[2]};font-size:18px;font-weight:600;`}
+          >
+            <td>{useData("total_members", 200)}</td>
+            <td>{useData("new_members", 10)}</td>
+            <td>{useData("active_members", 23)}</td>
+          </tr>
+          <tr
+            style={`text-align:left;color:${colors.grey[2]};font-size:14px;font-weight:500;`}
+          >
+            <td>Total Members</td>
+            <td>New Members</td>
+            <td>Active Members</td>
+          </tr>
+        </mj-table>
+
         <mj-spacer height="16px" />
         <mj-button
           font-size="14px"
@@ -129,12 +120,31 @@ function CohortCard() {
           background-color={colors.white}
           padding="0px"
           color={colors.primary.main}
-          href="https://beta.aviyel.com/projects/2069/cosmicvillage/community/summary"
+          href={useData(
+            "cohorts_url",
+            "https://beta.aviyel.com/projects/2069/cosmicvillage/community/cohorts/30"
+          )}
         >
           View Details
         </mj-button>
       </mj-section>
     </>
+  );
+}
+
+function SummaryEntry({ image, count }) {
+  return (
+    <div style="display:table;">
+      <div style="display:table-cell;vertical-align:middle;">
+        <img
+          src={image}
+          height="24px"
+          width="24px"
+          style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
+        />
+      </div>
+      <span style="display:table-cell;vertical-align:middle;">{count}</span>
+    </div>
   );
 }
 
@@ -152,22 +162,7 @@ function CohortsCommunityReport() {
       <mj-body background-color="#F6F6F9">
         <mj-section padding="32px" background-color={colors.white}>
           <mj-section padding="8px 0px">
-            <mj-column>
-              <mj-image
-                align="left"
-                src={useData("project_logo", "https://placeimg.com/44/44/tech")}
-                height="44px"
-                width="44px"
-              />
-            </mj-column>
-            <mj-column>
-              <mj-image
-                align="right"
-                src={logos.aviyel_small}
-                height="24px"
-                width="24px"
-              />
-            </mj-column>
+            <CommunityHeader />
           </mj-section>
           <mj-spacer height="16px" />
           <mj-text color={colors.grey[1]} font-size="22px">
@@ -181,90 +176,40 @@ function CohortsCommunityReport() {
           {/* Summary */}
           <mj-spacer height="24px" />
           <mj-section padding="20px" border={`1px solid ${colors.grey[6]}`}>
-            <mj-column>
-              <mj-text
-                font-size="24px"
-                font-weight="600"
-                color={colors.grey[1]}
+            <mj-table>
+              <tr
+                style={`text-align:left;color:${colors.grey[1]};font-size:24px;font-weight:600;`}
               >
-                <div style="display:table;">
-                  <div style="display:table-cell;vertical-align:middle;">
-                    <img
-                      src="https://beta.aviyel.com/assets/uploads/static/email/community.png"
-                      height="24px"
-                      width="24px"
-                      style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
-                    />
-                  </div>
-                  <span style="display:table-cell;vertical-align:middle;">
-                    {useData("total_members", 450)}
-                  </span>
-                </div>
-              </mj-text>
-              <mj-text
-                font-size="16px"
-                font-weight="600"
-                color={colors.grey[1]}
+                <td>
+                  <SummaryEntry
+                    count={useData("total_members", 450)}
+                    image="https://beta.aviyel.com/assets/uploads/static/email/community.png?v1"
+                  />
+                </td>
+                <td>
+                  <SummaryEntry
+                    count={useData("new_members", 450)}
+                    image="https://beta.aviyel.com/assets/uploads/static/email/community-new.png?v1"
+                  />
+                </td>
+                <td>
+                  <SummaryEntry
+                    count={useData("active_members", 450)}
+                    image="https://beta.aviyel.com/assets/uploads/static/email/community-active.png?v1"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td style="line-height:8px">&nbsp;</td>
+              </tr>
+              <tr
+                style={`text-align:left;color:${colors.grey[1]};font-size:16px;font-weight:600;`}
               >
-                Total Members
-              </mj-text>
-            </mj-column>
-            <mj-column>
-              <mj-text
-                font-size="24px"
-                font-weight="600"
-                color={colors.grey[1]}
-              >
-                <div style="display:table;">
-                  <div style="display:table-cell;vertical-align:middle;">
-                    <img
-                      src="https://beta.aviyel.com/assets/uploads/static/email/community-new.png"
-                      height="24px"
-                      width="24px"
-                      style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
-                    />
-                  </div>
-                  <span style="display:table-cell;vertical-align:middle;">
-                    {useData("new_members", 450)}
-                  </span>
-                </div>
-              </mj-text>
-              <mj-text
-                font-size="16px"
-                font-weight="600"
-                color={colors.grey[1]}
-              >
-                New Members
-              </mj-text>
-            </mj-column>
-            <mj-column>
-              <mj-text
-                font-size="24px"
-                font-weight="600"
-                color={colors.grey[1]}
-              >
-                <div style="display:table;">
-                  <div style="display:table-cell;vertical-align:middle;">
-                    <img
-                      src="https://beta.aviyel.com/assets/uploads/static/email/community-active.png"
-                      height="24px"
-                      width="24px"
-                      style="display:table-cell;margin-right:8px;height:24px;width:24px;vertical-align:middle;"
-                    />
-                  </div>
-                  <span style="display:table-cell;vertical-align:middle;">
-                    {useData("active_members", 450)}
-                  </span>
-                </div>
-              </mj-text>
-              <mj-text
-                font-size="16px"
-                font-weight="600"
-                color={colors.grey[1]}
-              >
-                Active Members
-              </mj-text>
-            </mj-column>
+                <td>Total Members</td>
+                <td>New Members</td>
+                <td>Active Members</td>
+              </tr>
+            </mj-table>
           </mj-section>
 
           <Loop

@@ -1,6 +1,6 @@
 import colors from "../common/colors";
 import { font } from "../common/styles";
-import { logos } from "../images/common";
+import { CommunityHeader } from "../components/community/header";
 import { If, useData } from "../utils";
 
 function WorkflowRewardsUnlocked() {
@@ -17,22 +17,7 @@ function WorkflowRewardsUnlocked() {
       <mj-body background-color="#F6F6F9">
         <mj-section padding="32px" background-color={colors.white}>
           <mj-section padding="8px 0px">
-            <mj-column>
-              <mj-image
-                align="left"
-                src={useData("project_logo", "https://placeimg.com/44/44/tech")}
-                height="44px"
-                width="44px"
-              />
-            </mj-column>
-            <mj-column>
-              <mj-image
-                align="right"
-                src={logos.aviyel_small}
-                height="24px"
-                width="24px"
-              />
-            </mj-column>
+            <CommunityHeader />
           </mj-section>
           <mj-spacer height="16px" />
           <mj-text font-size="18px" font-weight="600" color={colors.grey[1]}>
