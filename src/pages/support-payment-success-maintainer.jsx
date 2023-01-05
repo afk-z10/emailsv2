@@ -3,9 +3,6 @@ import { font } from "../common/styles";
 import { CommunityHeader } from "../components/community/header";
 import { useData } from "../utils";
 
-const request = new Request("");
-request.json();
-
 function SupportPaymentSuccessMaintainer() {
   return (
     <mjml style="background: #F6F6F9">
