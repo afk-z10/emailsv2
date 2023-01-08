@@ -28,6 +28,7 @@ const red = {
 };
 const orange = {
   1: "#fe812a",
+  3: "#FEF0E7",
 };
 
 const white = "#ffffff";

@@ -24,10 +24,10 @@ function SupportPaymentSuccessUser() {
                     align="left"
                     src={useData(
                       "project_logo",
-                      "https://placeimg.com/64/64/tech"
+                      "https://placeimg.com/56/56/tech"
                     )}
-                    height="64px"
-                    width="64px"
+                    height="56px"
+                    width="56px"
                   />
                 </td>
                 <td>
@@ -47,19 +47,32 @@ function SupportPaymentSuccessUser() {
             Payment Success!
           </mj-text>
 
-          <mj-spacer height="12px" />
-          <mj-text font-size="22px" font-weight="600" color={colors.grey[1]}>
-            Thank you for opting for Priority Support!
-          </mj-text>
-
           <mj-spacer height="40px" />
           <mj-text font-size="18px" color={colors.grey[2]}>
             Hey {useData("name", "John")},
-            <div style={`height:16px`} />
+          </mj-text>
+          <mj-spacer height="16px" />
+          <mj-text font-size="22px" font-weight="600" color={colors.grey[1]}>
+            Thank you for opting for Priority Support for your query
+          </mj-text>
+
+          <mj-spacer height="12px" />
+          <mj-section background-color={colors.grey[7]} padding="12px 16px">
+            <mj-text font-size="18px" color={colors.grey[2]}>
+              {useData(
+                "ps_title",
+                "TypeError: Object of type subcategories is not JSON serializable The data is not loaded in javascript"
+              )}
+            </mj-text>
+          </mj-section>
+
+          <mj-spacer height="16px" />
+          <mj-text font-size="18px" color={colors.grey[2]}>
             Your payment has been successfully processed and you will now have
-            access to expedited support. Our team will do their best to get you
-            quicker responses for your issues/questions from the maintainer team
-            of {useData("", "Typesense")} as quickly as possible.
+            access to expedited support.
+            <div style={`height:16px`} />
+            Our team will do their best to get you quicker responses for your
+            issues/questions.
           </mj-text>
 
           <mj-spacer height="32px" />
@@ -85,7 +98,9 @@ function SupportPaymentSuccessUser() {
             <div style={`height:16px`} />
             Cheers,
             <br />
-            <span style={`font-weight:600;`}>Team Aviyel</span>
+            <span style={`font-weight:600;`}>
+              Team {useData("project_name", "Typesense")}
+            </span>
           </mj-text>
         </mj-section>
       </mj-body>
