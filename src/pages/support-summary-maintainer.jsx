@@ -1,6 +1,6 @@
 import colors from "../common/colors";
 import { font } from "../common/styles";
-import { CommunityHeader } from "../components/community/header";
+import { logos } from "../images/common";
 import { For, useData } from "../utils";
 
 function SupportPaymentSuccess() {
@@ -17,12 +17,39 @@ function SupportPaymentSuccess() {
       <mj-body background-color="#F6F6F9">
         <mj-section padding="32px" background-color={colors.white}>
           <mj-section padding="8px 0px">
-            <CommunityHeader />
+            <mj-table>
+              <tr>
+                <td>
+                  <img
+                    align="left"
+                    src={useData(
+                      "project_logo",
+                      "https://placeimg.com/56/56/tech"
+                    )}
+                    height="56px"
+                    width="56px"
+                  />
+                </td>
+                <td>
+                  <img
+                    align="right"
+                    src={logos.aviyel_small}
+                    height="40px"
+                    width="40px"
+                  />
+                </td>
+              </tr>
+            </mj-table>
           </mj-section>
 
           <mj-spacer height="16px" />
-          <mj-text font-size="16px" color={colors.grey[2]}>
-            Daily dose of email updates
+          <mj-text font-size="18px" color={colors.grey[2]}>
+            Hey {useData("name", "John")},
+          </mj-text>
+
+          <mj-spacer height="16px" />
+          <mj-text font-size="18px" color={colors.grey[2]}>
+            Summary text lorem ipsum
           </mj-text>
 
           <mj-spacer height="16px" />
@@ -32,7 +59,7 @@ function SupportPaymentSuccess() {
             >
               <th style={`padding:12px 4px`}>User</th>
               <th style={`padding:12px 4px`}>Date</th>
-              <th style={`padding:12px 4px`}></th>
+              <th style={`padding:12px 4px`}>Link</th>
             </tr>
             <For i="entry" list="list">
               <tr
@@ -60,6 +87,24 @@ function SupportPaymentSuccess() {
               </tr>
             </For>
           </mj-table>
+
+          <mj-spacer height="16px" />
+          <mj-section>
+            <mj-text font-size="18px" color={colors.grey[2]}>
+              <a href={useData("dashboard_url", "https://beta.aviyel.com")}>
+                View Dashboard
+              </a>
+            </mj-text>
+          </mj-section>
+
+          <mj-spacer height="16px" />
+          <mj-text font-size="16px" color={colors.grey[2]}>
+            Thank you for choosing our service.
+            <div style={`height:16px`} />
+            Cheers,
+            <br />
+            <span style={`font-weight:600;`}>Team Aviyel</span>
+          </mj-text>
         </mj-section>
       </mj-body>
     </mjml>
