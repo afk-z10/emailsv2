@@ -91,7 +91,12 @@ function SupportPaymentSuccess() {
           <mj-spacer height="16px" />
           <mj-section>
             <mj-text font-size="18px" color={colors.grey[2]}>
-              <a href={useData("dashboard_url", "https://beta.aviyel.com")}>
+              <a
+                href={useData("dashboard_url", "https://beta.aviyel.com")}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={`text-decoration:none;color:${colors.primary.main}`}
+              >
                 View Dashboard
               </a>
             </mj-text>
