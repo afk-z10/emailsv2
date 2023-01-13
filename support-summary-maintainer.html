@@ -134,7 +134,7 @@
 
                             <!--[if mso | IE]></td><td align="left" class="" style="" ><![endif]-->
 
-                            <div style="font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:18px;line-height:1.5;text-align:left;color:#464554;">Summary text lorem ipsum</div>
+                            <div style="font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:18px;line-height:1.5;text-align:left;color:#464554;">Summary text lorem ipsum, these are pending items ..sfsd</div>
 
                             <!--[if mso | IE]></td><td class="" style="" ><![endif]-->
 
@@ -142,17 +142,12 @@
 
                             <!--[if mso | IE]></td><td align="left" class="" style="" ><![endif]-->
 
-                            <table cellpadding="0px" cellspacing="0" width="100%" border="0" style="color:#000000;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:13px;line-height:22px;table-layout:auto;width:100%;border:none;">
-                                <tr style="text-align:left;color:#464554;font-size:16px;border-bottom:1px solid #EBEBF0">
-                                    <th style="padding:12px 4px">User</th>
-                                    <th style="padding:12px 4px">Date</th>
-                                    <th style="padding:12px 4px">Link</th>
-                                </tr>{% for entry in list %}<tr style="text-align:left;color:#464554;font-size:16px;border-bottom:1px solid #EBEBF0">
-                                    <td style="padding:8px 4px">{{ entry.email }}</td>
-                                    <td style="padding:8px 4px">{{ entry.date }}</td>
-                                    <td style="padding:8px 4px"><a href="{{ entry.link }}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:#8661D1">View</a></td>
-                                </tr>{% endfor %}
-                            </table>
+                            <div style="font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-size:13px;line-height:1.5;text-align:left;color:#000000;">
+                                <div style="padding:10px;text-align:left;color:#464554;font-size:16px;border:1px solid #EBEBF0">
+                                    <div style="margin-bottom:4px"><a href="{{ entry.link }}" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:#8661D1">{{ entry.content }}</a></div>
+                                    <div style="color:#464554;font-size:13px">{{ entry.email }}   {{ entry.date }}</div>
+                                </div>
+                            </div>
 
                             <!--[if mso | IE]></td><td class="" style="" ><![endif]-->
 
